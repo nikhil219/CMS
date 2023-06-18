@@ -1,0 +1,16 @@
+nav{
+    width: 102.2%;
+    display: flex;
+    background-color: white;
+    box-shadow: 10px 10px 5px 0px rgba(235,235,235,1);
+
+}
+.navbardetails a{
+    padding-left: 30px;
+    padding-top: 91px;
+    position: relative;
+    top: 30px;
+    left: 60rem;
+    text-decoration: none;
+    color: blueviolet;
+}

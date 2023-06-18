@@ -5,6 +5,8 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { OrderComponent } from './order/order.component';
 import { ReciptComponent } from './recipt/recipt.component';
 import { MenuComponent } from './menu/menu.component';
+import { HomeComponent } from './home/home.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 
@@ -14,7 +16,9 @@ import { MenuComponent } from './menu/menu.component';
     SignUpComponent,
     OrderComponent,
     ReciptComponent,
-    MenuComponent
+    MenuComponent,
+    HomeComponent,
+    NavbarComponent
   ],
   imports: [
     CommonModule
