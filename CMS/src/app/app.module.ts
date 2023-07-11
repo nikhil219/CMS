@@ -8,6 +8,7 @@ import { HomeComponent } from './cmsmodule/home/home.component';
 import { OrderComponent } from './cmsmodule/order/order.component';
 import { MenuComponent } from './cmsmodule/menu/menu.component';
 import { NavbarComponent } from './cmsmodule/navbar/navbar.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,9 @@ import { NavbarComponent } from './cmsmodule/navbar/navbar.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    AppRoutingModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
