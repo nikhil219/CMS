@@ -49,8 +49,9 @@
 	</dependencies>
 
 	<build>
-		<plugins>
-			<plugin>
+	
+	<plugins>
+		<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
@@ -62,7 +63,32 @@
 					</excludes>
 				</configuration>
 			</plugin>
-		</plugins>
+	
+			<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-resources-plugin</artifactId>
+    <version>3.2.0</version>
+    <executions>
+        <execution>
+            <id>copy-angular-dist</id>
+            <phase>prepare-package</phase>
+            <goals>
+                <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+                <outputDirectory>${project.basedir}/src/main/webapp</outputDirectory>
+                <resoursces>
+                    <resource>
+                        <directory>${project.basedir}/angular/dist</directory>
+                    </resource>
+                </resoursces>
+            </configuration>
+        </execution>
+    </executions>
+</plugin>
+	</plugins>
+		
+		
 	</build>
 
 </project>
