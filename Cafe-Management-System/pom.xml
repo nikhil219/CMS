@@ -21,7 +21,7 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jdbc</artifactId>
-		</dependency>
+					</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -30,11 +30,15 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<optional>true</optional>
+<dependency>
+    <groupId>org.postgresql</groupId>
+    <artifactId>postgresql</artifactId>
+    <version>42.2.5</version>
+</dependency>
+<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -69,21 +73,22 @@
     <artifactId>maven-resources-plugin</artifactId>
     <version>3.2.0</version>
     <executions>
-        <execution>
-            <id>copy-angular-dist</id>
-            <phase>prepare-package</phase>
-            <goals>
-                <goal>copy-resources</goal>
-            </goals>
-            <configuration>
-                <outputDirectory>${project.basedir}/src/main/webapp</outputDirectory>
-                <resoursces>
-                    <resource>
-                        <directory>${project.basedir}/angular/dist</directory>
-                    </resource>
-                </resoursces>
-            </configuration>
-        </execution>
+	        <execution>
+	    <id>copy-angular-dist</id>
+	    <phase>prepare-package</phase>
+	    <goals>
+	        <goal>copy-resources</goal>
+	    </goals>
+	    <configuration>
+	        <outputDirectory>${project.basedir}/src/main/webapp</outputDirectory>
+	        <resources>
+	            <resource>
+	                <directory>$..{project.basedir}/dist</directory>
+	            </resource>
+	        </resources>
+	    </configuration>
+	</execution>
+
     </executions>
 </plugin>
 	</plugins>
